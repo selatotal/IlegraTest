@@ -24,15 +24,6 @@ public class SalesmanList {
 		}
 	}
 
-	public Salesman getByName(String string) {
-		for (Salesman salesman : this.salesmanList){
-			if (salesman.getName().equals(string)){
-				return salesman;
-			}
-		}
-		return null;
-	}
-	
 	public void reset(){
 		this.salesmanList = new HashSet<>();
 	}

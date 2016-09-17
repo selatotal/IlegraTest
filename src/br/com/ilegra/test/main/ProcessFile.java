@@ -50,6 +50,7 @@ public class ProcessFile {
 						// Sales Data
 						if (parsedLine.length == 4){
 							Sale sale = Sale.fromArray(parsedLine);
+							sale.setSalesman(this.getByName(parsedLine[3]));
 							saleList.add(sale);
 						}
 					}
@@ -85,6 +86,10 @@ public class ProcessFile {
 		}
 	}
 	
+	public void moveProcessedFile(File pathTo){
+		this.currentFile.renameTo(new File(pathTo.getAbsolutePath()+"//"+this.currentFile.getName()));
+	}
+	
 	public void createOutputFile(){
 		this.summarize();
 		System.out.println("Amount of clients: " + this.customerList.size());
@@ -92,5 +97,16 @@ public class ProcessFile {
 		System.out.println("ID of Most Expensive Sale: " + this.mostExpensiveSale.getId());
 		System.out.println("Worst Salesman Ever: " + this.worstSalesman.getName());
 	}
+
+	public Salesman getByName(String string) {
+		for (Salesman salesman : this.salesmanList){
+			if (salesman.getName().equals(string)){
+				return salesman;
+			}
+		}
+		return null;
+	}
+	
+
 	
 }

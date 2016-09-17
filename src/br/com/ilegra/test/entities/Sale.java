@@ -40,7 +40,6 @@ public class Sale implements Comparable<Sale> {
 	public static Sale fromArray(String[] line) {
 		Sale sale = new Sale();
 		sale.setId(Long.parseLong(line[1]));
-		sale.setSalesman(SalesmanList.getInstance().getByName(line[3]));
 
 		// Parse and calculate Sale value
 		double totalSale = 0;
