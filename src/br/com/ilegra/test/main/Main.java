@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
 
 	private static boolean DO_LOOP = true;
-	private static boolean MOVE_PROCESSED_FILE = true;
+	private static boolean MOVE_PROCESSED_FILE = false;
 
 	public static void main(String[] args) {
 
@@ -63,7 +63,7 @@ public class Main {
 
 			// Wait 10 seconds to next verification
 			try {
-				System.out.println("Waiting 10s to next verirication...");
+				System.out.println("Waiting 10s to next verification...");
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

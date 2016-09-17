@@ -1,7 +1,5 @@
 package br.com.ilegra.test.entities;
 
-import br.com.ilegra.test.model.SalesmanList;
-
 public class Sale implements Comparable<Sale> {
 
 	private long id;
