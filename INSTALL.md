@@ -21,7 +21,7 @@ This installation process uses Makefile to compile code, but you can use your fa
 
 Execute program
 ```bash
-./run.sh
+$ ./run.sh
 ```
 
 You can set HOMEPATH environment variable if you want to change input files dir. If you don`t, HOMEPATH will have the value homepath

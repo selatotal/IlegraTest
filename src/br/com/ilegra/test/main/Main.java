@@ -6,8 +6,8 @@ import br.com.ilegra.test.util.FileUtil;
 
 public class Main {
 
-	private static boolean DO_LOOP = false;
-	private static boolean MOVE_PROCESSED_FILE = false;
+	private static boolean DO_LOOP = true;
+	private static boolean MOVE_PROCESSED_FILE = true;
 
 	public static void main(String[] args) {
 
