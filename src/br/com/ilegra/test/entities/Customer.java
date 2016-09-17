@@ -1,6 +1,11 @@
 package br.com.ilegra.test.entities;
 
-public class Customer implements Comparable<Customer>{
+/**
+ * Customer entity
+ * @author Tales Viegas - tales@terra.com.br
+ *
+ */
+public class Customer{
 
 	private long cnpj;
 	private String name;
@@ -31,11 +36,11 @@ public class Customer implements Comparable<Customer>{
 		this.businessArea = businessArea;
 	}
 
-	@Override
-	public int compareTo(Customer customer){
-		return Long.compare(this.cnpj, customer.cnpj);
-	}
-	
+	/**
+	 * Get a Customer based on a splitted line
+	 * @param line Splitted line
+	 * @return Customer
+	 */
 	public static Customer fromArray(String[] line){
 		Customer customer = new Customer();
 		customer.setCnpj(Long.parseLong(line[1]));

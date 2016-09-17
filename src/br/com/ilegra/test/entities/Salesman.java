@@ -1,5 +1,10 @@
 package br.com.ilegra.test.entities;
 
+/**
+ * Salesman entity
+ * @author Tales Viegas - tales@terra.com.br
+ *
+ */
 public class Salesman{
 
 	private long cpf;
@@ -39,7 +44,11 @@ public class Salesman{
 		this.totalSales += totalSale;
 	}
 	
-	// Create Salesman from Line
+	/**
+	 * Get a Salesman based on a splitted line
+	 * @param line Splitted line
+	 * @return Salesman
+	 */
 	public static Salesman fromArray(String[] line){
 		Salesman salesman = new Salesman();
 		salesman.setCpf(Long.parseLong(line[1]));

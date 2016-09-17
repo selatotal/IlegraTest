@@ -5,22 +5,31 @@ import java.util.*;
 
 import br.com.ilegra.test.entities.*;
 
+/**
+ * Class to process input files
+ * @author Tales Bitelo Viegas  - tales@terra.com.br
+ * 
+ */
 public class ProcessFile {
 
 	private File currentFile;
 	private HashSet<Customer> customerList = new HashSet<>();
 	private HashSet<Salesman> salesmanList = new HashSet<>();
 	private HashSet<Sale> saleList = new HashSet<>();
-
-	// Get Most Expensive Sale and Worst Salesman
 	private Sale mostExpensiveSale = null;
 	private Salesman worstSalesman = null;
 
 	
+	/**
+	 * @param currentFile File to be processed
+	 */
 	public ProcessFile(File currentFile){
 		this.currentFile = currentFile;
 	}
 	
+	/**
+	 * Process current file based on problem rules 
+	 */
 	public void process(){
 		
 		// Open and scan file
@@ -64,6 +73,9 @@ public class ProcessFile {
 		
 	}
 	
+	/**
+	 * Summarize file elements, according to the problem
+	 */
 	private void summarize(){
 
 		// Get Most Expensive Sale and Worst Salesman
@@ -86,10 +98,19 @@ public class ProcessFile {
 		}
 	}
 	
+	/**
+	 * Move file to processed path
+	 * @param pathTo path to move file
+	 * 
+	 */
 	public void moveProcessedFile(File pathTo){
 		this.currentFile.renameTo(new File(pathTo.getAbsolutePath()+"//"+this.currentFile.getName()));
 	}
 	
+	/**
+	 * Create output file, according to the problem rules
+	 * @param pathTo path to create file
+	 */
 	public void createOutputFile(File pathTo){
 		
 		// Create output file
@@ -111,6 +132,11 @@ public class ProcessFile {
 
 	}
 
+	/**
+	 * Return the Salesman object that has the name informed 
+	 * @param string Salesman's name to be searched
+	 * @return Salesman found or null otherwise
+	 */
 	public Salesman getByName(String string) {
 		for (Salesman salesman : this.salesmanList){
 			if (salesman.getName().equals(string)){

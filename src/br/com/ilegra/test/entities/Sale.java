@@ -1,6 +1,11 @@
 package br.com.ilegra.test.entities;
 
-public class Sale implements Comparable<Sale> {
+/**
+ * Sale entity
+ * @author Tales Viegas - tales@terra.com.br
+ *
+ */
+public class Sale {
 
 	private long id;
 	private Salesman salesman;
@@ -30,11 +35,11 @@ public class Sale implements Comparable<Sale> {
 		this.total = total;
 	}
 
-	@Override
-	public int compareTo(Sale sale) {
-		return Long.compare(this.id, sale.id);
-	}
-
+	/**
+	 * Get a Sale based on a splitted line
+	 * @param line splitted line
+	 * @return Sale
+	 */
 	public static Sale fromArray(String[] line) {
 		Sale sale = new Sale();
 		sale.setId(Long.parseLong(line[1]));
