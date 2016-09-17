@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ -z $HOMEPATH ]]; then
-	export HOMEPATH=/Users/talesviegas/repositorios/pessoal/IlegraTest/homedir
+	export HOMEPATH=../homedir
 fi
 echo $HOMEPATH
 cd bin
