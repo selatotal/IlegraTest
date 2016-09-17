@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ -z $HOMEPATH ]]; then
+if [[ -z "$HOMEPATH" ]]; then
 	export HOMEPATH=../homedir
 fi
 echo $HOMEPATH
