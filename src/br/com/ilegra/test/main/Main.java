@@ -27,6 +27,18 @@ public class Main {
 			processError("Could not read path: " + homePath, true);
 		}
 
+		// Create output files directory
+		String outputPath = homePathEnv + "/data/out";
+		File outputPathDir = new File(outputPath);
+
+		if (!outputPathDir.exists()) {
+			if (!outputPathDir.mkdirs()) {
+				processError("Could not create processed path: " + outputPath, true);
+			}
+		} else if (!outputPathDir.isDirectory()) {
+			processError("Processed Path is not a directory: " + homePath, true);
+		}
+
 		// Create processed files directory
 		String processedPath = homePathEnv + "/data/processed";
 		File processedPathDir = new File(processedPath);
@@ -54,7 +66,7 @@ public class Main {
 				for (File eachFile : fileList) {
 					ProcessFile processFile = new ProcessFile(eachFile);
 					processFile.process();
-					processFile.createOutputFile();
+					processFile.createOutputFile(outputPathDir);
 					if (Main.MOVE_PROCESSED_FILE) {
 						processFile.moveProcessedFile(processedPathDir);
 					}
