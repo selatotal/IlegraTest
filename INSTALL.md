@@ -2,8 +2,7 @@
 
 ## Requirements
 
-* Java Development Kit (JDK) - http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
-* 
+* Java Development Kit (JDK) - http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html 
 
 ## Installation process
 
