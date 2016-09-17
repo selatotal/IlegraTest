@@ -68,6 +68,8 @@ public class Main {
 					}
 					System.out.println("File processed: " + eachFile.getName());
 				}
+			} else {
+				System.out.println("No new files found");
 			}
 
 			// Wait 10 seconds to next verification
